@@ -3,12 +3,12 @@ node {
 		git 'https://github.com/VicenteBarria/lab1_ArqSistemas'
 	}
 	stage('Build container') {
-		sh './sh_files/buildContainer.sh'
+		bat './sh_files/buildContainer.bat'
 	}
 	stage('Push to my repo') {
-		sh './sh_files/pushToRepo.sh'
+		bat './sh_files/pushToRepo.bat'
 	}
 	stage('Push to Heroku') {
-		sh './sh_files/pushToHeroku.sh'
+		bat './sh_files/pushToHeroku.bat'
 	}
 }
