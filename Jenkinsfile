@@ -1,14 +1,14 @@
 node {
 	stage('Pull from original GitHub repo') {
-		git 'https://github.com/gnarula/django-ribbit'
+		sh './sh_files/pullFromGit.sh'
 	}
 	stage('Build container') {
 		sh 'docker-compose up'
 	}
 	stage('Push to my repo') {
-		sh './sh_files/pushToRepo'
+		sh './sh_files/pushToRepo.sh'
 	}
 	stage('Push to Heroku') {
-		sh './sh_files/pushToHeroku'
+		sh './sh_files/pushToHeroku.sh'
 	}
 }
