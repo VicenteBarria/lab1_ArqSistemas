@@ -3,7 +3,7 @@ node {
 		git 'https://github.com/VicenteBarria/lab1_ArqSistemas'
 	}
 	stage('Build container') {
-		sh 'docker-compose up'
+		sh './sh_files/buildContainer.sh'
 	}
 	stage('Push to my repo') {
 		sh './sh_files/pushToRepo.sh'
