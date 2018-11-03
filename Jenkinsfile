@@ -1,6 +1,6 @@
 node {
 	stage('Pull from original GitHub repo') {
-		sh './sh_files/pullFromGit.sh'
+		git 'https://github.com/VicenteBarria/lab1_ArqSistemas'
 	}
 	stage('Build container') {
 		sh 'docker-compose up'
