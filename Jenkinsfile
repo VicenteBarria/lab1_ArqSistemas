@@ -3,19 +3,12 @@ node {
 		git 'https://github.com/gnarula/django-ribbit'
 	}
 	stage('Build container') {
-		docker-compose build
+		sh 'docker-compose build'
 	}
 	stage('Push to my repo') {
-		git commit -m "changes"
-		git push origin master
+		sh './sh_files/pushToRepo'
 	}
 	stage('Push to Heroku') {
-		cd django-ribbit
-		docker login
-		heroku login
-		heroku container: push web
-		heroku container:release web
-		heroku open
-		cd ..
+		sh './sh_files/pushToHeroku'
 	}
 }
