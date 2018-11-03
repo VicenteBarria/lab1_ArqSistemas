@@ -1,0 +1,21 @@
+version: '3'
+services:
+    website:
+        build: 
+            context: .
+            dockerfile: Dockerfile_python
+        restart: always
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - ./jenkins/workspace/django-ribbit/:/website
+        ports:
+            - "8000:8000"
+    jenkins:
+        build:
+            context: .
+            dockerfile: Dockerfile_jenkinsHeroku
+        volumes:
+            - ./jenkins_home/:/var/jenkins_home
+        ports:
+            - "8080:8080"
+            - "50000:50000"
