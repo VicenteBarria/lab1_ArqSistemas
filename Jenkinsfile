@@ -3,7 +3,7 @@ node {
 		git 'https://github.com/gnarula/django-ribbit'
 	}
 	stage('Build container') {
-		sh 'docker-compose build'
+		sh 'docker-compose up'
 	}
 	stage('Push to my repo') {
 		sh './sh_files/pushToRepo'
