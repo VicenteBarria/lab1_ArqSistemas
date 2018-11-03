@@ -1,3 +1,3 @@
 cd django-ribbit
-docker-compose up
+docker-compose up -d
 cd ..
