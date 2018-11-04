@@ -1,3 +1,3 @@
-cd django-ribbit
+cd NotMyJob
 docker-compose up -d
 cd ..

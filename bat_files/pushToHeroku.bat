@@ -1,4 +1,4 @@
-cd django-ribbit
+cd NotMyJob
 docker login
 heroku login
 heroku container:login
