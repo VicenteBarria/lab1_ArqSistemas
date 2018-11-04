@@ -8,7 +8,7 @@ node {
 	//stage('Push to my repo') {
 	//	bat './bat_files/pushToRepo.bat'
 	//}
-	stage('Push to Heroku') {
-		bat './bat_files/pushToHeroku.bat'
-	}
+	//stage('Push to Heroku') {
+	//	bat './bat_files/pushToHeroku.bat'
+	//}
 }
